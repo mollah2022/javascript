@@ -4,7 +4,7 @@ function person (){
       this.Age = 25;
       this.nationality = "Bangladeshi";
 
-      this.display = () => {
+      this.display = ()=> {
           console.log("Hello");
       }
 }
