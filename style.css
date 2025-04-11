@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+#menu ul{
+    text-align: center;
+    margin-top: 40px;
+}
+
+#menu li{
+    display: inline-block;
+    border: 2px solid #ddd;
+    width: 100px;
+    height: 100px;
+    margin: 0 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #ddd;
+    cursor: pointer;
+}
+
+#menu li.red{
+    background: #d63031;
+}
+
+#menu li.blue{
+    background: #0984e3;
+}
+
+#menu li.green{
+    background: #27ae60;
+}
+
+#menu li.pink{
+    background: #ff7675;
+}
