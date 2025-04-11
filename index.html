@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dom_Project_1</title>
+    <title>CountDown</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<body id="body">
-       <nav id="menu">
-          <ul>
-            <li class="red"></li>
-            <li class="blue"></li>
-            <li class="green"></li>
-            <li class="pink"></li>
-          </ul>
-       </nav>
-
-       <script src="script.js"></script>
+<body>
+     <h1>Count Down Apps</h1>
+     <div class="countdown-container container">
+           <div class="countdown days-container">
+              <p id="days">0</p>
+              <span>Days</span>
+           </div>
+           <div class="countdown hours-container">
+              <p id="hours">0</p>
+              <span>Hours</span>
+           </div>
+           <div class="countdown minutes-container">
+              <p id="minutes">0</p>
+              <span>Minutes</span>
+           </div>
+           <div class="countdown second-container">
+              <p id="second">0</p>
+              <span>Seconds</span>
+           </div>
+     </div>
 </body>
 </html>

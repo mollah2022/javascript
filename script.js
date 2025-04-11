@@ -1,50 +1,28 @@
-// const redColor = document.querySelector(".red");
 
-// redColor.addEventListener( "click", () => {
-//       const backgroundChange = document.getElementById("body");
-//       backgroundChange.style.backgroundColor = "#d63031";
-// })
+ 
+ const offerEnds = " 5 nov 2025";
+ 
+ function countdown () {
+       const offerDate = new Date(offerEnds);
+       const currentDate = new Date();
+       
+       const totalSeconds = ( offerDate - currentDate ) / 1000;
 
-// const BlueColor = document.querySelector(".blue");
+       const Days = Math.floor( totalSeconds / (24*60*60));
+       const Hours = Math.floor( totalSeconds % (3600*24) / 3600 );
+       const Minutes = Math.floor( totalSeconds % 3600 / 60 );
+       const Second  = Math.floor( totalSeconds % 60 );
 
-// BlueColor.addEventListener( "click", () => {
-//       const backgroundChange = document.getElementById("body");
-//       backgroundChange.style.backgroundColor = "#0984e3";
-// })
+       document.getElementById("days").innerText = formatTime(Days);
+       document.getElementById("hours").innerText = formatTime(Hours);
+       document.getElementById("minutes").innerText = formatTime(Minutes);
+       document.getElementById("second").innerText = formatTime(Second);
+}
 
-// const greenColor = document.querySelector(".green");
+function formatTime(time){
+       return time < 10 ? (`0${time}`) : time
+}
 
-// greenColor.addEventListener( "click", () => {
-//       const backgroundChange = document.getElementById("body");
-//       backgroundChange.style.backgroundColor = "#27ae60";
-// })
 
-// const pinkColor = document.querySelector(".pink");
-
-// pinkColor.addEventListener( "click", () => {
-//       const backgroundChange = document.getElementById("body");
-//       backgroundChange.style.backgroundColor = "#ff7675";
-// })
-
-const allList = document.querySelectorAll("li");
-const Body = document.getElementById("body");
-
-allList.forEach( function (el) {
-      el.addEventListener( "click" , function () {
-        let className = this.classList[0];
-        let color = "";
-        if( className === "red" ){
-            color = "#d63031";
-        }
-        if( className === "blue" ){
-            color = "#0984e3";
-        }
-        if( className === "green" ){
-            color = "#27ae60";
-        }
-        if( className === "pink" ){
-            color = "#ff7675";
-        }
-        Body.style.backgroundColor = color;
-      })
-})
+countdown()
+setInterval(countdown,1000)
