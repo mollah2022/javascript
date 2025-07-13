@@ -1,17 +1,30 @@
-console.log(`Take Order for Customer 1`);
+function myFunction(){
+    console.log("Hello Crcket");
+}
+myFunction();
 
-const processOrder = () => {
-    console.log(`Processing Order for Customer 1`);
+function addition(number1,number2){
+    return number1 + number2;
+}
+let value = addition(5,10);
+console.log((value));
 
-    const currentTime = new Date().getTime();
-
-    while( currentTime + 3000 > new Date().getTime() ){
-
+function Calculater(number1,number2,operator){
+    switch(operator){
+        case '+':
+            return number1 + number2;
+        case '-':
+            return number1 - number2;       
+        case '*':
+            return number1 * number2;
+        case '/':
+            return number1 / number2;
+        default:
+            return "Invalid operator";
     }
-
-    console.log(`Order Process for Customer 1`);
 }
 
-processOrder();
-
-console.log(`Order Complete for Customer 1`);
+let result = Calculater(10, 5, '+');
+console.log(result);
+let result2 = Calculater(10, 5, '-');
+console.log(result2);

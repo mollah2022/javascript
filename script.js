@@ -1,29 +1,20 @@
-const Plus = document.getElementById("plus");
-const Minus = document.getElementById("minus");
-const Value = document.getElementById("value");
+let x = 10;
+let y = 20;
 
-let value = 0;
+let sum = (x + y);
+console.log(sum);
 
+let array = [1,2,3,4,5,6,7,8,9,10];
 
-function Increase(){
-    value++;
-    if( value >= 11 ){
-        value = 10;
-        Plus.style.cursor ="alias";
-        Value.innerText = value;
-    }
-    else{
-        Value.innerText = value;
-    }
+for( let i = 0; i < array.length; i++){
+    console.log(array[i]);
 }
-function Decrease(){
-    value--;
-    if( value < 0 ){
-        value = 0;
-        Minus.style.cursor ="alias";
-        Value.innerText = value;
-    }
-    else {
-        Value.innerText = value;
-    }
-}
+
+array.forEach((el) => {
+    console.log(el);
+})
+;
+
+array.map( item => {
+    console.log(item);
+})

@@ -1,15 +1,20 @@
-console.log(`Take Order for Customer 1`);
-
-const processOrder = () => {
-    console.log(`Processing Order for Customer 1`);
-
-    setTimeout( () => {
-        console.log(`Cooking Done`);
-    },3000);
-
-    console.log(`Order Process for Customer 1`);
+const Myself = {
+    firstName : 'Sajib',
+    lastName: 'Hossain',
+    email: 'sajibahmed12032022@gmail.com',
+    phone: '01712345678',
+    age: 25,
+    address: {
+        street: '123 Main St',
+        city: 'Dhaka',
+        country: 'Bangladesh'
+    },
 }
 
-processOrder();
+console.log(Myself);
+console.log(Myself.firstName);
+console.log(Myself.address.city);
 
-console.log(`Order Complete for Customer 1`);
+Myself.wifeName = 'fatema';
+Myself.address.zipcode = 1216;
+console.log(Myself);
