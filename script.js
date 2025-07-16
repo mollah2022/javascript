@@ -1,20 +1,10 @@
-let x = 10;
-let y = 20;
-
-let sum = (x + y);
-console.log(sum);
-
-let array = [1,2,3,4,5,6,7,8,9,10];
-
-for( let i = 0; i < array.length; i++){
-    console.log(array[i]);
+function myDisplay(value) {
+     document.getElementById("pera").innerHTML = "The sum is: " + value;
 }
 
-array.forEach((el) => {
-    console.log(el);
-})
-;
+function Myfunction(num1 = 0,num2 = 0){
+    let sum = num1 + num2 ;
+    myDisplay(sum);
+}
 
-array.map( item => {
-    console.log(item);
-})
+Myfunction(10,20);
