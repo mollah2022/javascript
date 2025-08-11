@@ -1,38 +1,106 @@
-import { useCallback, useMemo, useState } from "react";
-import Button from "./Button";
-import Headline from "./Headline";
-import Count from "./Count";
+import { useState } from "react";
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
-  const [count1, setCount1] = useState(0);
+  const [increase, setIncrease] = useState(0);
+  const [decrease, setDecrease] = useState(0);
+  const [clear, setClear] = useState(0);
 
-  const handleClick1 = useCallback(() => {
-    setCount((prev) => prev + 1);
-  }, []);
+  const total = increase + decrease;
 
-  const handleClick2 = useCallback(() => {
-    setCount1((prev1) => prev1 + 5);
-  }, []);
-
-  const oddValue = useMemo(() => {
-    let i = 0;
-    while (i < 1000000000000000) {
-      i++;
-      return count % 2 === 0 ? "even number" : "odd Number";
+  const IncreaseHandler = () => {
+    if (total < 100) {
+      setIncrease(increase + 1);
     }
-  }, [count]);
+  };
+
+  const DecreaseHandler = () => {
+    if (total > 0) {
+      setDecrease(decrease - 1);
+    }
+  };
+
+  const ClearHandler = () => {
+    setIncrease(0);
+    setDecrease(0);
+  };
 
   return (
-    <>
-      <Headline />
-      <Count value={count} />
-      <p>This value is {oddValue}</p>
-      <Button onChnage={handleClick1} />
-      <br /> <br />
-      <Count value={count1} />
-      <Button onChnage={handleClick2} />
-    </>
+    <div
+      style={{
+        border: "5px solid red",
+        padding: "10px",
+        borderRadius: "5px",
+        background: "pink",
+        margin: "0 auto",
+        width: "40vw",
+        height: "auto",
+        marginTop: "80px",
+      }}
+    >
+      <h1 style={{ textAlign: "center" }}>This Counter Application....</h1>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <button
+          style={{
+            height: "50px",
+            width: "150px",
+            backgroundColor: "skyblue",
+            marginRight: "10px",
+            fontSize: "30px",
+            borderRadius: "10px",
+          }}
+          onClick={IncreaseHandler}
+        >
+          +
+        </button>
+        <button
+          style={{
+            height: "50px",
+            width: "150px",
+            backgroundColor: "skyblue",
+            fontSize: "30px",
+            borderRadius: "10px",
+          }}
+          onClick={DecreaseHandler}
+        >
+          -
+        </button>
+      </div>
+      <p
+        style={{
+          textAlign: "center",
+          border: "3px solid green",
+          width: "50%",
+          margin: "20px auto",
+          padding: "10px",
+          borderRadius: "10px",
+          fontSize: "20px",
+          color: "red",
+          background: "white",
+        }}
+      >
+        Result-{total}
+      </p>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <button
+          style={{
+            height: "50px",
+            width: "150px",
+            backgroundColor: "skyblue",
+            fontSize: "30px",
+            borderRadius: "10px",
+          }}
+          onClick={ClearHandler}
+        >
+          Clear
+        </button>
+      </div>
+    </div>
   );
 };
 export default Counter;

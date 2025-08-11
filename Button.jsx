@@ -1,11 +1,9 @@
-import { memo } from "react";
-
-const Button = ({ onChnage }) => {
-  console.log("Button is Rendering");
+const Button = ({ onChnage, counter }) => {
   return (
     <>
-      <button onClick={onChnage}>Increase By Value</button>
+      <p>This is Value of Counter : {counter}</p>
+      <button onClick={onChnage}>Increase By One</button>
     </>
   );
 };
-export default memo(Button);
+export default Button;
